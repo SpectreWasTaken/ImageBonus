@@ -1,35 +1,40 @@
 const quizData = [
     {
-        question: "Which language runs in a web browser?",
-        a: "Java",
-        b: "C",
-        c: "Python",
-        d: "javascript",
-        correct: "d",
-    },
-    {
-        question: "What does CSS stand for?",
-        a: "Central Style Sheets",
-        b: "Cascading Style Sheets",
-        c: "Cascading Simple Sheets",
-        d: "Cars SUVs Sailboats",
-        correct: "b",
-    },
-    {
-        question: "What does HTML stand for?",
-        a: "Hypertext Markup Language",
-        b: "Hypertext Markdown Language",
-        c: "Hyperloop Machine Language",
-        d: "Helicopters Terminals Motorboats Lamborginis",
+        question: "What Happened to the second Image",
+        a: "The Image was blurred, and changed its color map",
+        b: "The Image was inverted",
+        c: "The Image was flipped",
+        d: "No Change",
         correct: "a",
+        img: "../images/HQ1.png"
     },
     {
-        question: "What year was JavaScript launched?",
-        a: "1996",
-        b: "1995",
-        c: "1994",
-        d: "none of the above",
+        question: "What Happened to the second Image",
+        a: "Added Salt & Pepper noise",
+        b: "Blurred the Image",
+        c: "Added Gaussian Noise, Increased Contrast",
+        d: "No Change",
+        correct: "c",
+        img: "../images/HQ2.png"
+    },
+    {
+        question: "What Happened to the second Image",
+        a: "Image Blurred",
+        b: "Image had its contrast increased",
+        c: "Image had its color map changed",
+        d: "No Change",
         correct: "b",
+        img: "../images/HQ3.png"
+    },
+    {
+        question: "To change the Brightness of an image, you have to:",
+        a: "Add or Subtract values to each pixel equally",
+        b: "Mutliply the image with a solid white image",
+        c: "Use the cv2.cvtColor() function",
+        d: "none of the above",
+        correct: "a",
+        img: null
+
     },
 
 
@@ -43,6 +48,7 @@ const b_text = document.getElementById('b_text')
 const c_text = document.getElementById('c_text')
 const d_text = document.getElementById('d_text')
 const submitBtn = document.getElementById('submit')
+const imgArea = document.getElementById('quizImage')
 
 
 let currentQuiz = 0
@@ -61,6 +67,14 @@ function loadQuiz() {
     b_text.innerText = currentQuizData.b
     c_text.innerText = currentQuizData.c
     d_text.innerText = currentQuizData.d
+    // if(currentQuizData.img == null){
+    //     imgArea.hidden = true
+    // } else{
+    //     imgArea.src = currentQuizData.img
+    //     imgArea.hidden = false;
+    // }
+    imgArea.src=currentQuizData.img
+
 }
 
 function deselectAnswers() {

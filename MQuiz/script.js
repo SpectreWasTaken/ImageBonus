@@ -6,6 +6,8 @@ const quizData = [
         c: "The Image is Blurred",
         d: "More Noise added to the image",
         correct: "d",
+        img: "../images/MQ1.png"
+
     },
     {
         question: "What was changed in the second image ",
@@ -14,6 +16,7 @@ const quizData = [
         c: "The Image had its contrast increased",
         d: "The Image had noise added to it",
         correct: "b",
+        img: "../images/MQ2.png"
     },
     {
         question: "The Different Types of blur are:",
@@ -22,6 +25,7 @@ const quizData = [
         c: "Box Blur, Bilatral Blur, denoise Blur",
         d: "Gaussian Blur is the only correct answer",
         correct: "a",
+        img: null
     },
     {
         question: "The Different types of noise are:",
@@ -30,6 +34,7 @@ const quizData = [
         c: "Salt & Pepper Noise, Gaussian Noise",
         d: "No Answer is correct",
         correct: "c",
+        img: null
     },
 
 
@@ -43,6 +48,8 @@ const b_text = document.getElementById('b_text')
 const c_text = document.getElementById('c_text')
 const d_text = document.getElementById('d_text')
 const submitBtn = document.getElementById('submit')
+const imgArea = document.getElementById('quizImage')
+
 
 
 let currentQuiz = 0
@@ -61,6 +68,13 @@ function loadQuiz() {
     b_text.innerText = currentQuizData.b
     c_text.innerText = currentQuizData.c
     d_text.innerText = currentQuizData.d
+    // if(Object.is(currentQuizData.img, null)){
+    //     imgArea.hidden = true
+    // } else{
+    //     imgArea.src = currentQuizData.img
+    //     imgArea.hidden = false;
+    // }
+    imgArea.src=currentQuizData.img
 }
 
 function deselectAnswers() {
