@@ -61,3 +61,7 @@ button:focus{
   outline: none;
   background-color: #44b927;
 }
+a{
+  text-decoration: none;
+  color: #fff;
+}
